@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#Copyright 2015 Gregory Kramida
+
 #exit if anything fails
 set -e
 
