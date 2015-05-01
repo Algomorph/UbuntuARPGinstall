@@ -511,9 +511,6 @@ cmake -G "Eclipse CDT4 - Unix Makefiles" "-DBUILD_APPLICATIONS=ON" ../../calibu
 make -j${NUM_CORES}
 install_ARPG_package_default Node "libgoogle-glog-dev,libavahi-compat-libdnssd-dev,libgflags2,protobuf-compiler,libprotoc-dev,libsodium,libzmq3-dev,zmqpp" "-DCMAKE_C_FLAGS=-fPIC -DCMAKE_CXX_FLAGS=-fPIC"
 install_ARPG_package_default HAL "protonect,calibu,libeigen3-dev,node,pangolin,sophus,zmqpp"
-#fix broken HAL installation directory structure:
-sudo rsync -av /usr/HAL/HAL/ /usr/local/include/HAL/
-sudo rm -rf /usr/HAL
 
 install_ARPG_package_default vicalib "cvars,calibu,ceres-solver,libeigen3-dev,hal,pangolin,scenegraph,sophus,libgoogle-glog-dev,libgtest-dev,libgflags2,opencv"
 install_ARPG_package_default Kangaroo "nvidia-cuda-toolkit,calibu,libeigen3-dev,hal,pangolin,scenegraph,sophus,assimp,opencv" "-DCUDA_npp_LIBRARY=/usr/lib/x86_64-linux-gnu/libnppi.so"
