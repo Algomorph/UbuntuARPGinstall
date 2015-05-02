@@ -204,14 +204,14 @@ echo "____________________________________________________________"
 fi #end checkout block
 
 
-inquire "Install third-party packages from official ubuntu repos (recommended for first-time install)?" answer
+inquire "Install third-party packages from official ubuntu repos? (Recommended for first-time install. Warning: make sure to review the proposed changes, so you don't let this script remove half your freakin' system)." answer
 if [ ${answer} == 1 ]; then #begin thrid-party block
 echo "____________________________________________________________"
 echo ""
 echo "Installing third-party packages from official ubuntu repos."
 echo "____________________________________________________________"
 
-sudo apt-get install -y build-essential libtool autoconf libturbojpeg cmake libudev-dev mesa-common-dev freeglut3-dev libxrandr-dev doxygen libxi-dev automake libeigen3-dev libsuitesparse-dev libgoogle-glog-dev libatlas-base-dev libopenexr-dev libtbb-dev libraw1394-dev libpng-dev libjpeg-dev libtiff-dev nvidia-cuda-toolkit libavcodec-ffmpeg-dev libavcodec-ffmpeg-dev libavformat-ffmpeg-dev libavutil-ffmpeg-dev libswscale-ffmpeg-dev qtbase5-dev libzmq3-dev protobuf-compiler libprotoc-dev libxi6 zlib1g-dev libdevil-dev libboost-dev libavahi-compat-libdnssd-dev libgflags2 libgtest-dev checkinstall rsync
+sudo apt-get install build-essential libtool autoconf libturbojpeg cmake libudev-dev mesa-common-dev freeglut3-dev libxrandr-dev doxygen libxi-dev automake libeigen3-dev libsuitesparse-dev libgoogle-glog-dev libatlas-base-dev libopenexr-dev libtbb-dev libraw1394-dev libpng-dev libjpeg-dev libtiff-dev nvidia-cuda-toolkit libavcodec-ffmpeg-dev libavcodec-ffmpeg-dev libavformat-ffmpeg-dev libavutil-ffmpeg-dev libswscale-ffmpeg-dev qtbase5-dev libzmq3-dev protobuf-compiler libprotoc-dev libxi6 zlib1g-dev libdevil-dev libboost-dev libavahi-compat-libdnssd-dev libgflags2 libgtest-dev checkinstall rsync
 
 echo "____________________________________________________________"
 fi #end third-party block
