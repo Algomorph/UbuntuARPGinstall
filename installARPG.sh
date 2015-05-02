@@ -334,9 +334,7 @@ make -j${NUM_CORES}
 export CCACHE_DISABLE=0
 
 set +e
-sudo apt-get remove -y libopencv-dev libhighgui-dev libopencv-contrib-dev libopencv-highgui-dev
-  libopencv-legacy-dev libopencv-objdetect-dev libopencv-ocl-dev
-  libopencv-superres-dev libopencv-videostab-dev opencv
+sudo apt-get remove libopencv-* opencv
 set -e
 
 sudo checkinstall -y --exclude=/home --pkgname=opencv --conflicts=opencv,libopencv-dev --requires=libeigen3-dev,libopenexr-dev,libtbb-dev,libraw1394-dev,libpng-dev,libjpeg-dev,libtiff-dev,nvidia-cuda-toolkit,libavcodec-ffmpeg-dev,libavcodec-ffmpeg-dev,libavformat-ffmpeg-dev,libavutil-ffmpeg-dev,libswscale-ffmpeg-dev
@@ -365,7 +363,7 @@ if [ -d zmqpp ]; then
 fi
 
 set +e
-sudo apt-get remove libsodium zmqpp
+sudo apt-get remove libsodium zmqpp libzmqpp-dev
 set -e
 
 git clone git@github.com:jedisct1/libsodium.git
