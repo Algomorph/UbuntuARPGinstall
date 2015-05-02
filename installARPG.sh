@@ -97,6 +97,8 @@ echo "____________________________________________________________"
 fi #end uninstall block
 
 
+ARPG_GIT_REPOS=(miniglog Sophus CVars Pangolin SceneGraph calibu Node HAL vicalib Kangaroo D-MoCap)
+
 inquire "Clear out old ARPG repositores?" answer
 if [ ${answer} == 1 ]; then #begin clear-out repo block
 
@@ -105,11 +107,7 @@ echo ""
 echo "Clearing out old ARPG repositories."
 echo "____________________________________________________________"
 
-
 OLD_ARPG_DIR="Garage/ARPG"
-
-ARPG_GIT_REPOS=(miniglog Sophus CVars Pangolin SceneGraph calibu Node HAL vicalib Kangaroo D-MoCap)
-
 found_or_skip=0
 skip=0
 while [ $found_or_skip == 0 ]; do
@@ -178,6 +176,7 @@ ignore=0
 for repo in ${ARPG_GIT_REPOS[@]}; do
 	if [ -d ${repo} ]; then
 		if [ $ignore == 0 ]; then
+
 			if [ $remove == 0 ]; then
 				inquire "Directory '${repo}'. exists. Remove this and any other conflicting directories and continue?" answer
 				if [ ${answer} == 1 ]; then
