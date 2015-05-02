@@ -326,13 +326,14 @@ cd opencv
 git checkout 2.4
 cd ..
 
-mkdir build2.4
+mkdir -p build2.4
 cd build2.4
 
 export CCACHE_DISABLE=1
 cmake -G "Eclipse CDT4 - Unix Makefiles" ${cv_options[*]} ../opencv
 make -j${NUM_CORES}
 export CCACHE_DISABLE=0
+
 set +e
 sudo apt-get remove -y libopencv-dev libhighgui-dev libopencv-contrib-dev libopencv-highgui-dev
   libopencv-legacy-dev libopencv-objdetect-dev libopencv-ocl-dev
