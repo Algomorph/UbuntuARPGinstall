@@ -210,7 +210,7 @@ echo ""
 echo "Installing third-party packages from official ubuntu repos."
 echo "____________________________________________________________"
 
-sudo apt-get install build-essential libtool autoconf libturbojpeg cmake libudev-dev mesa-common-dev freeglut3-dev libxrandr-dev doxygen libxi-dev automake libeigen3-dev libsuitesparse-dev libgoogle-glog-dev libatlas-base-dev libopenexr-dev libtbb-dev libraw1394-dev libpng-dev libjpeg-dev libtiff-dev nvidia-cuda-toolkit libavcodec-ffmpeg-dev libavcodec-ffmpeg-dev libavformat-ffmpeg-dev libavutil-ffmpeg-dev libswscale-ffmpeg-dev qtbase5-dev libzmq3-dev protobuf-compiler libprotoc-dev libxi6 zlib1g-dev libdevil-dev libboost-dev libavahi-compat-libdnssd-dev libgflags2 libgtest-dev checkinstall rsync
+sudo apt-get install build-essential libtool autoconf libturbojpeg cmake libudev-dev mesa-common-dev freeglut3-dev libxrandr-dev doxygen libxi-dev automake libeigen3-dev libsuitesparse-dev libgoogle-glog-dev libatlas-base-dev libopenexr-dev libtbb-dev libraw1394-dev libpng-dev libjpeg-dev libtiff-dev nvidia-cuda-toolkit libavcodec-ffmpeg-dev libavcodec-ffmpeg-dev libavformat-ffmpeg-dev libavutil-ffmpeg-dev libswscale-ffmpeg-dev qtbase5-dev libzmq3-dev protobuf-compiler libprotoc-dev libxi6 zlib1g-dev libdevil-dev libboost-dev libavahi-compat-libdnssd-dev libgflags2 libgtest-dev checkinstall rsync dos2unix
 
 echo "____________________________________________________________"
 fi #end third-party block
@@ -307,7 +307,7 @@ done
 if [ "$(cat /proc/cpuinfo | egrep "(\W)avx2($|\W)")" != "" ]; then
 	INST_SETS+=('AVX2')
 fi
-echo "CPU instruction sets supported by both this machine and opencv: $INST_SETS{[*]}"
+echo "CPU instruction sets supported by both this machine and opencv: ${INST_SETS[*]}"
 for inst_set in ${INST_SETS[@]}; do
 	cv_options+=("-DENABLE_${inst_set}=ON")
 done
