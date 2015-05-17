@@ -4,5 +4,5 @@ This script builds and installs *most* third-party dependencies. Custom-built pr
 
 The script is likely to break as the ARPG packages and third-party requirements change, as well as with different conditions in different environments. If some part of the script fails on your machine, submit an issue or suggest a fix.
 
-Currently, Kangaroo and D-MoCap seem to be broken for different reasons. I can integrate the fix for Kangaroo into the script later. D-MoCap will probably have to wait until ARPG update it to work with the new HAL.
+Kangaroo's routines seem to have problems during runtime. D-MoCap's future is currently uncertain. I have a compilable fork which might be (might have been?) merged into the ARPG mainstream.
 
